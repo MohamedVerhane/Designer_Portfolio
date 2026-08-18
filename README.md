@@ -1,4 +1,4 @@
-# Meridian Studio
+# Designer Studio
 
 A premium company portfolio website built with React, Tailwind CSS, Framer Motion, and Lucide React.
 

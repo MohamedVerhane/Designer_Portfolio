@@ -50,13 +50,13 @@ export default function Navbar() {
             href="#home"
             onClick={(e) => handleNavClick(e, '#home')}
             className="flex items-center gap-2.5 group"
-            aria-label="Meridian Studio — Home"
+            aria-label="Designer Studio — Home"
           >
             <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-dark text-white font-bold text-sm tracking-tight transition-transform duration-300 group-hover:scale-105">
               M
             </div>
             <span className="text-lg font-semibold tracking-tight text-dark">
-              Meridian
+              Designer
             </span>
           </a>
 

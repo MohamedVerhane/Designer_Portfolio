@@ -21,7 +21,7 @@ export default function About() {
             </h2>
             <div className="mt-8 space-y-5 text-muted leading-relaxed">
               <p>
-                Meridian Studio was founded on a simple conviction: that the gap between
+                Designer Studio was founded on a simple conviction: that the gap between
                 what businesses need and what most agencies deliver is fundamentally a
                 design problem. Too many companies settle for digital experiences that
                 look generic, feel disjointed, and fail to connect.

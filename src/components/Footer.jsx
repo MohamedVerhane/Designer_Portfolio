@@ -36,11 +36,11 @@ export default function Footer() {
         <div className="py-16 lg:py-20 grid gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-4">
-            <a href="#home" onClick={(e) => scrollTo(e, '#home')} className="flex items-center gap-2.5 group" aria-label="Meridian Studio — Home">
+            <a href="#home" onClick={(e) => scrollTo(e, '#home')} className="flex items-center gap-2.5 group" aria-label="Designer Studio — Home">
               <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-dark font-bold text-sm tracking-tight">
                 M
               </div>
-              <span className="text-lg font-semibold tracking-tight">Meridian</span>
+              <span className="text-lg font-semibold tracking-tight">Designer</span>
             </a>
             <p className="mt-5 text-sm leading-relaxed text-stone-400 max-w-xs">
               A digital design and development studio crafting experiences
@@ -108,7 +108,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="py-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-stone-500">
-            &copy; {new Date().getFullYear()} Meridian Studio. All rights reserved.
+            &copy; {new Date().getFullYear()} Designer Studio. All rights reserved.
           </p>
           <div className="flex items-center gap-6">
             <a href="#" className="text-xs text-stone-500 hover:text-stone-300 transition-colors">
