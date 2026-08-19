@@ -7,7 +7,7 @@ export default function CTA() {
   }
 
   return (
-    <section className="relative py-24 lg:py-32 bg-dark overflow-hidden">
+    <section className="relative py-24 lg:py-32 bg-ink overflow-hidden">
       {/* Background video from Pexels (free commercial use) */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <video
@@ -71,7 +71,7 @@ export default function CTA() {
             <a
               href="#contact"
               onClick={(e) => { e.preventDefault(); scrollTo('#contact') }}
-              className="group inline-flex items-center gap-2.5 rounded-full bg-white px-8 py-4 text-sm font-medium text-dark transition-all duration-300 hover:bg-accent-500 hover:text-white hover:shadow-xl hover:shadow-accent-500/25 active:scale-[0.97]"
+              className="group inline-flex items-center gap-2.5 rounded-full bg-white px-8 py-4 text-sm font-medium text-dark dark:bg-white dark:text-ink transition-all duration-300 hover:bg-accent-500 hover:text-white hover:shadow-xl hover:shadow-accent-500/25 active:scale-[0.97]"
             >
               Start a Conversation
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />

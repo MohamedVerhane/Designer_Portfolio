@@ -68,8 +68,8 @@ const services = [
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 lg:py-32 bg-surface">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+    <section id="services" className="relative py-24 lg:py-32 overflow-hidden">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -96,28 +96,28 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.5, delay: 0.06 * i }}
-                className="group relative rounded-2xl bg-white overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-stone-200/50 hover:-translate-y-1 border border-transparent hover:border-stone-100"
+                className="group relative rounded-2xl bg-white dark:bg-dark-card overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-stone-200/50 dark:hover:shadow-black/20 hover:-translate-y-1 border border-transparent hover:border-stone-100 dark:hover:border-white/10"
               >
                 <div className="relative h-48 overflow-hidden">
                   <ImageWithFallback
                     src={service.image}
                     alt={service.imageAlt}
                     className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    fallbackClassName="h-full w-full bg-gradient-to-br from-accent-100 to-accent-200 flex items-center justify-center"
+                    fallbackClassName="h-full w-full bg-gradient-to-br from-accent-100 to-accent-200 dark:from-accent-900/50 dark:to-accent-800/30 flex items-center justify-center"
                     fallbackContent={
                       <div className="opacity-30">
                         <Icon className="h-12 w-12 text-accent-500" strokeWidth={1} />
                       </div>
                     }
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent" />
-                  <div className="absolute top-4 left-4 flex h-8 w-8 items-center justify-center rounded-lg bg-white/90 backdrop-blur-sm text-xs font-mono font-semibold text-dark shadow-sm">
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/20 dark:from-dark-card dark:via-dark-card/20 to-transparent" />
+                  <div className="absolute top-4 left-4 flex h-8 w-8 items-center justify-center rounded-lg bg-white/90 dark:bg-dark-card/90 backdrop-blur-sm text-xs font-mono font-semibold text-dark shadow-sm">
                     {service.number}
                   </div>
                 </div>
 
                 <div className="px-7 pb-7 -mt-4 relative">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-50 text-accent-600 transition-all duration-300 group-hover:bg-accent-600 group-hover:text-white group-hover:shadow-lg group-hover:shadow-accent-600/25">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-accent-50 dark:bg-accent-500/15 text-accent-600 transition-all duration-300 group-hover:bg-accent-600 group-hover:text-white group-hover:shadow-lg group-hover:shadow-accent-600/25">
                     <Icon className="h-5 w-5" strokeWidth={1.8} />
                   </div>
                   <h3 className="mt-4 text-lg font-semibold tracking-tight text-dark">

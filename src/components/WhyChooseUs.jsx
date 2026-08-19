@@ -43,8 +43,8 @@ const features = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="py-24 lg:py-32 bg-dark text-white overflow-hidden">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+    <section className="relative py-24 lg:py-32 bg-ink text-white overflow-hidden">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <div className="grid gap-16 lg:grid-cols-12 lg:gap-20">
           {/* Left column - sticky heading + men team image */}
           <motion.div

@@ -50,8 +50,8 @@ export default function Testimonials() {
   const t = testimonials[current]
 
   return (
-    <section className="py-24 lg:py-32 bg-surface overflow-hidden">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+    <section className="relative py-24 lg:py-32 overflow-hidden">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -86,10 +86,10 @@ export default function Testimonials() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-              className="relative rounded-3xl bg-white p-8 sm:p-12 lg:p-16 shadow-sm border border-stone-100"
+              className="relative rounded-3xl bg-white p-8 sm:p-12 lg:p-16 shadow-sm dark:shadow-white/5 border border-stone-100 dark:border-white/10 dark:bg-dark-card"
             >
               {/* Quote icon */}
-              <Quote className="h-10 w-10 text-accent-200 mb-6" strokeWidth={1.5} />
+              <Quote className="h-10 w-10 text-accent-200 dark:text-accent-500/30 mb-6" strokeWidth={1.5} />
 
               {/* Testimonial text */}
               <blockquote className="text-lg sm:text-xl lg:text-2xl font-medium leading-relaxed text-dark tracking-tight">
@@ -131,7 +131,7 @@ export default function Testimonials() {
                   className={`h-2 rounded-full transition-all duration-300 ${
                     i === current
                       ? 'w-8 bg-accent-500'
-                      : 'w-2 bg-stone-300 hover:bg-stone-400'
+                      : 'w-2 bg-stone-300 hover:bg-stone-400 dark:bg-white/20 dark:hover:bg-white/30'
                   }`}
                 />
               ))}
@@ -140,14 +140,14 @@ export default function Testimonials() {
               <button
                 onClick={prev}
                 aria-label="Previous testimonial"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-dark transition-all duration-200 hover:border-stone-300 hover:shadow-sm active:scale-95"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white dark:border-white/10 dark:bg-dark-card text-dark transition-all duration-200 hover:border-stone-300 hover:shadow-sm dark:hover:border-white/20 active:scale-95"
               >
                 <ChevronLeft className="h-4 w-4" />
               </button>
               <button
                 onClick={next}
                 aria-label="Next testimonial"
-                className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white text-dark transition-all duration-200 hover:border-stone-300 hover:shadow-sm active:scale-95"
+                className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-200 bg-white dark:border-white/10 dark:bg-dark-card text-dark transition-all duration-200 hover:border-stone-300 hover:shadow-sm dark:hover:border-white/20 active:scale-95"
               >
                 <ChevronRight className="h-4 w-4" />
               </button>

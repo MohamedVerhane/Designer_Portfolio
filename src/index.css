@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:is(.dark *));
+
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
   --color-accent-50: #eef2ff;
@@ -12,12 +14,37 @@
   --color-accent-700: #4338ca;
   --color-accent-800: #3730a3;
   --color-accent-900: #312e81;
-  --color-surface: #fafaf9;
-  --color-surface-warm: #f5f5f4;
-  --color-dark: #0c0a09;
-  --color-dark-card: #1c1917;
-  --color-dark-border: #292524;
-  --color-muted: #78716c;
+  --color-surface: var(--bg-page);
+  --color-surface-warm: var(--bg-warm);
+  --color-card: var(--bg-card);
+  --color-dark: var(--fg);
+  --color-ink: #0c0a09;
+  --color-dark-card: var(--bg-dark-section);
+  --color-dark-border: var(--border-dim);
+  --color-muted: var(--fg-secondary);
+  --color-border: var(--border-main);
+}
+
+:root {
+  --bg-page: #fafaf9;
+  --bg-warm: #f5f5f4;
+  --bg-card: #ffffff;
+  --bg-dark-section: #0c0a09;
+  --fg: #0c0a09;
+  --fg-secondary: #78716c;
+  --border-main: #e7e5e4;
+  --border-dim: #292524;
+}
+
+html.dark {
+  --bg-page: #0c0a09;
+  --bg-warm: #1c1917;
+  --bg-card: #1c1917;
+  --bg-dark-section: #0c0a09;
+  --fg: #fafaf9;
+  --fg-secondary: #a8a29e;
+  --border-main: #292524;
+  --border-dim: #44403c;
 }
 
 html {

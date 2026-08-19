@@ -66,7 +66,7 @@ const logos = [
 
 export default function LogoCloud() {
   return (
-    <section className="py-20 lg:py-24 bg-surface" aria-label="Trusted by">
+    <section className="py-20 lg:py-24" aria-label="Trusted by">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <motion.p
           initial={{ opacity: 0, y: 15 }}
@@ -92,7 +92,7 @@ export default function LogoCloud() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.05 * i }}
-              className="text-stone-300 transition-colors duration-300 hover:text-stone-500 cursor-default"
+              className="text-stone-300 dark:text-white/20 transition-colors duration-300 hover:text-stone-500 dark:hover:text-white/40 cursor-default"
               aria-label={logo.name}
             >
               {logo.svg}

@@ -67,8 +67,8 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 lg:py-32 bg-white">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+    <section id="projects" className="relative py-24 lg:py-32 overflow-hidden">
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -125,9 +125,9 @@ export default function Projects() {
                   }
                 />
 
-                <div className="absolute inset-0 bg-dark/0 transition-colors duration-500 group-hover:bg-dark/50" />
+                <div className="absolute inset-0 bg-dark/0 dark:bg-black/0 transition-colors duration-500 group-hover:bg-dark/50 dark:group-hover:bg-black/50" />
 
-                <div className="absolute top-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/0 text-white/0 transition-all duration-300 group-hover:bg-white group-hover:text-dark">
+                <div className="absolute top-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/0 dark:bg-white/0 text-white/0 transition-all duration-300 group-hover:bg-white dark:group-hover:bg-white group-hover:text-dark dark:group-hover:text-ink">
                   <ArrowUpRight className="h-5 w-5" />
                 </div>
 

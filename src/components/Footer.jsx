@@ -30,14 +30,14 @@ export default function Footer() {
   }
 
   return (
-    <footer className="bg-dark text-white border-t border-white/5">
+    <footer className="bg-ink text-white border-t border-white/5">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         {/* Main footer */}
         <div className="py-16 lg:py-20 grid gap-12 lg:grid-cols-12 lg:gap-8">
           {/* Brand */}
           <div className="lg:col-span-4">
             <a href="#home" onClick={(e) => scrollTo(e, '#home')} className="flex items-center gap-2.5 group" aria-label="Designer Studio — Home">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-dark font-bold text-sm tracking-tight">
+              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-white text-dark dark:bg-dark-card dark:text-white font-bold text-sm tracking-tight">
                 M
               </div>
               <span className="text-lg font-semibold tracking-tight">Designer</span>
