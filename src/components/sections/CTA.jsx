@@ -1,11 +1,11 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
+import { btnWhite, btnWhiteOutline, container } from '../../styles/styles'
+import { FloatSparkle, FloatPlus, FloatRingDot, FloatSquare } from '../illustrations'
 
 export default function CTA() {
-  const scrollTo = (id) => {
-    document.querySelector(id)?.scrollIntoView({ behavior: 'smooth' })
-  }
-
+  const { t } = useTranslation()
   return (
     <section className="relative py-24 lg:py-32 bg-ink overflow-hidden">
       {/* Background video from Pexels (free commercial use) */}
@@ -29,7 +29,39 @@ export default function CTA() {
         <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/70 to-dark/90" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12 text-center">
+      {/* Floating accent shapes */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <motion.div
+          animate={{ y: [0, -12, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute top-24 left-10 rtl:left-auto rtl:right-10 hidden sm:block text-accent-400/50"
+        >
+          <FloatSparkle className="h-10 w-10" />
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, 12, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+          className="absolute top-1/3 right-16 rtl:right-auto rtl:left-16 hidden md:block text-accent-400/40"
+        >
+          <FloatPlus className="h-10 w-10" />
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, -10, 0], rotate: [0, 15, 0] }}
+          transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+          className="absolute bottom-24 right-10 rtl:right-auto rtl:left-10 hidden lg:block text-accent-500/60"
+        >
+          <FloatSquare className="h-11 w-11" />
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+          className="absolute bottom-1/2 left-1/4 hidden md:block text-accent-400/50"
+        >
+          <FloatRingDot className="h-11 w-11" />
+        </motion.div>
+      </div>
+
+      <div className={`${container} text-center`}>
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,10 +76,10 @@ export default function CTA() {
             transition={{ duration: 0.7 }}
             className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-tight text-white leading-[1.08]"
           >
-            Let&apos;s create
+            {t('cta.titleLine1')}
             <br />
-            something{' '}
-            <span className="text-accent-400">remarkable.</span>
+            {t('cta.titleLine2')}{' '}
+            <span className="text-accent-400">{t('cta.titleAccent')}</span>
           </motion.h2>
 
           <motion.p
@@ -57,8 +89,7 @@ export default function CTA() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="mt-6 text-lg sm:text-xl text-stone-400 leading-relaxed max-w-xl mx-auto"
           >
-            Whether you&apos;re launching a new product, reimagining your brand, or
-            scaling your digital presence — we&apos;re ready.
+            {t('cta.subtitle')}
           </motion.p>
 
           <motion.div
@@ -68,19 +99,17 @@ export default function CTA() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="mt-10 flex flex-wrap items-center justify-center gap-4"
           >
-            <a
-              href="#contact"
-              onClick={(e) => { e.preventDefault(); scrollTo('#contact') }}
-              className="group inline-flex items-center gap-2.5 rounded-full bg-white px-8 py-4 text-sm font-medium text-dark dark:bg-white dark:text-ink transition-all duration-300 hover:bg-accent-500 hover:text-white hover:shadow-xl hover:shadow-accent-500/25 active:scale-[0.97]"
+            <Link
+              to="/contact"
+              className={`${btnWhite} px-8 py-4`}
             >
-              Start a Conversation
-              <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+              {t('common.getInTouch')}
+            </Link>
             <a
-              href="mailto:hello@meridianstudio.com"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 px-6 sm:px-8 py-4 text-sm font-medium text-white transition-all duration-300 hover:border-white/30 hover:bg-white/5 active:scale-[0.97] text-center justify-center"
+              href="mailto:hello@designerstudio.com"
+              className={`${btnWhiteOutline} px-6 sm:px-8 py-4`}
             >
-              hello@meridianstudio.com
+              hello@designerstudio.com
             </a>
           </motion.div>
         </motion.div>

@@ -7,7 +7,7 @@ const logos = [
       <svg viewBox="0 0 120 36" fill="none" className="h-7 w-auto">
         <path d="M18 4L32 30H4L18 4Z" fill="currentColor" opacity="0.15" />
         <path d="M18 10L28 28H8L18 10Z" fill="currentColor" />
-        <text x="38" y="24" fontFamily="Inter,sans-serif" fontWeight="700" fontSize="20" fill="currentColor">Apex</text>
+        <text x="38" y="24" fontFamily="Poppins,sans-serif" fontWeight="700" fontSize="20" fill="currentColor">Apex</text>
       </svg>
     ),
   },
@@ -17,7 +17,7 @@ const logos = [
       <svg viewBox="0 0 140 36" fill="none" className="h-7 w-auto">
         <circle cx="16" cy="18" r="12" stroke="currentColor" strokeWidth="2.5" fill="none" />
         <path d="M10 22L16 12L22 22" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="36" y="24" fontFamily="Inter,sans-serif" fontWeight="700" fontSize="20" fill="currentColor">Vertex</text>
+        <text x="36" y="24" fontFamily="Poppins,sans-serif" fontWeight="700" fontSize="20" fill="currentColor">Vertex</text>
       </svg>
     ),
   },
@@ -27,7 +27,7 @@ const logos = [
       <svg viewBox="0 0 110 36" fill="none" className="h-7 w-auto">
         <rect x="4" y="4" width="28" height="28" rx="6" fill="currentColor" />
         <path d="M12 24V12L18 20L24 12V24" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="40" y="24" fontFamily="Inter,sans-serif" fontWeight="700" fontSize="20" fill="currentColor">Nova</text>
+        <text x="40" y="24" fontFamily="Poppins,sans-serif" fontWeight="700" fontSize="20" fill="currentColor">Nova</text>
       </svg>
     ),
   },
@@ -36,7 +36,7 @@ const logos = [
     svg: (
       <svg viewBox="0 0 120 36" fill="none" className="h-7 w-auto">
         <path d="M4 18H10L14 8L18 28L22 14L26 22H32" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-        <text x="40" y="24" fontFamily="Inter,sans-serif" fontWeight="700" fontSize="20" fill="currentColor">Pulse</text>
+        <text x="40" y="24" fontFamily="Poppins,sans-serif" fontWeight="700" fontSize="20" fill="currentColor">Pulse</text>
       </svg>
     ),
   },
@@ -48,7 +48,7 @@ const logos = [
         <path d="M4 18C4 12 10 8 16 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.6" />
         <path d="M4 18C4 13 9 10 14 10" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
         <circle cx="4" cy="18" r="2" fill="currentColor" />
-        <text x="26" y="24" fontFamily="Inter,sans-serif" fontWeight="700" fontSize="20" fill="currentColor">Echo</text>
+        <text x="26" y="24" fontFamily="Poppins,sans-serif" fontWeight="700" fontSize="20" fill="currentColor">Echo</text>
       </svg>
     ),
   },
@@ -58,7 +58,7 @@ const logos = [
       <svg viewBox="0 0 105 36" fill="none" className="h-7 w-auto">
         <path d="M6 8C6 8 14 8 18 14C22 20 30 20 30 20" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" />
         <path d="M6 20C6 20 14 20 18 14C22 8 30 8 30 8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" opacity="0.4" />
-        <text x="38" y="24" fontFamily="Inter,sans-serif" fontWeight="700" fontSize="20" fill="currentColor">Flux</text>
+        <text x="38" y="24" fontFamily="Poppins,sans-serif" fontWeight="700" fontSize="20" fill="currentColor">Flux</text>
       </svg>
     ),
   },
@@ -75,7 +75,7 @@ export default function LogoCloud() {
           transition={{ duration: 0.5 }}
           className="text-center text-sm font-medium tracking-widest uppercase text-muted mb-12"
         >
-          Trusted by ambitious teams around the world
+          Trusted by teams building what&apos;s next
         </motion.p>
 
         <motion.div
@@ -108,10 +108,10 @@ export default function LogoCloud() {
           className="mt-16 grid grid-cols-2 gap-8 md:grid-cols-4 max-w-2xl mx-auto"
         >
           {[
-            { value: '120+', label: 'Projects Delivered' },
-            { value: '40+', label: 'Global Clients' },
-            { value: '8+', label: 'Years of Experience' },
-            { value: '15', label: 'Countries Served' },
+            { value: '120+', label: 'Projects shipped' },
+            { value: '40+', label: 'Clients worldwide' },
+            { value: '8+', label: 'Years in business' },
+            { value: '15', label: 'Countries reached' },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}

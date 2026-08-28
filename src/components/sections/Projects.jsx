@@ -1,74 +1,86 @@
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowUpRight } from 'lucide-react'
-import ImageWithFallback from './ImageWithFallback'
+import { useTranslation } from 'react-i18next'
+import ImageWithFallback from '../ui/ImageWithFallback'
+import { container, sectionLabel, cardImg } from '../../styles/styles'
+import { FloatRing, FloatTriangle, FloatSparkle, FloatRingDot } from '../illustrations'
 
-const projects = [
+const projectMeta = [
   {
-    id: 1,
-    title: 'Luminary Finance',
-    category: 'Fintech \u00b7 Product Design \u00b7 Development',
-    description:
-      'A complete digital banking platform redesign that increased user engagement by 40% and reduced onboarding friction significantly.',
     image: 'https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=900&q=80&auto=format&fit=crop',
-    imageAlt: 'Man designer working on fintech dashboard design',
     fallbackBg: 'from-indigo-500 to-purple-600',
     span: 'lg:col-span-1',
     aspect: 'aspect-[4/3]',
   },
   {
-    id: 2,
-    title: 'Aether Wellness',
-    category: 'Health & Wellness \u00b7 Brand Identity',
-    description:
-      'Brand identity and marketing website for a premium wellness platform serving 200K+ monthly users.',
     image: 'https://images.unsplash.com/photo-1542744094-24638eff58bb?w=600&q=80&auto=format&fit=crop',
-    imageAlt: 'Man designer creating wellness brand visuals',
     fallbackBg: 'from-emerald-400 to-teal-500',
     span: 'lg:col-span-1',
     aspect: 'aspect-[4/3]',
   },
   {
-    id: 3,
-    title: 'Carta Commerce',
-    category: 'E-Commerce \u00b7 Full-Stack Development',
-    description:
-      'Headless e-commerce solution processing $2M+ in annual transactions with 99.9% uptime.',
     image: 'https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=600&q=80&auto=format&fit=crop',
-    imageAlt: 'Man developer building e-commerce platform interface',
     fallbackBg: 'from-orange-400 to-rose-500',
     span: 'lg:col-span-1',
     aspect: 'aspect-[4/3]',
   },
   {
-    id: 4,
-    title: 'Stratos Aerospace',
-    category: 'Enterprise \u00b7 SaaS \u00b7 Data Visualization',
-    description:
-      'Real-time analytics dashboard for fleet management, processing 10K+ data points per second.',
     image: 'https://images.unsplash.com/photo-1545235617-9465d2a55698?w=600&q=80&auto=format&fit=crop',
-    imageAlt: 'Man designer working on data visualization dashboard',
     fallbackBg: 'from-slate-600 to-slate-800',
     span: 'lg:col-span-1',
     aspect: 'aspect-[4/3]',
   },
   {
-    id: 5,
-    title: 'Verdant Studios',
-    category: 'Creative Agency \u00b7 Web Design',
-    description:
-      'Award-winning portfolio site featuring immersive 3D elements and cinematic transitions.',
     image: 'https://images.unsplash.com/photo-1547658719-da2b51169166?w=600&q=80&auto=format&fit=crop',
-    imageAlt: 'Man creative director designing portfolio layout',
     fallbackBg: 'from-amber-400 to-orange-500',
+    span: 'lg:col-span-1',
+    aspect: 'aspect-[4/3]',
+  },
+  {
+    image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=600&q=80&auto=format&fit=crop',
+    fallbackBg: 'from-cyan-400 to-blue-500',
     span: 'lg:col-span-1',
     aspect: 'aspect-[4/3]',
   },
 ]
 
 export default function Projects() {
+  const { t } = useTranslation()
   return (
     <section id="projects" className="relative py-24 lg:py-32 overflow-hidden">
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+      {/* Floating decorative shapes */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <motion.div
+          animate={{ y: [0, -12, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+          className="absolute top-24 left-8 rtl:left-auto rtl:right-8 hidden md:block text-accent-500/60"
+        >
+          <FloatRing className="h-12 w-12" />
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, 12, 0], rotate: [0, 20, 0] }}
+          transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}
+          className="absolute top-1/3 right-10 rtl:right-auto rtl:left-10 hidden lg:block text-accent-400/80"
+        >
+          <FloatTriangle className="h-10 w-10" />
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 5.5, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
+          className="absolute bottom-32 right-1/4 hidden lg:block text-accent-600/50"
+        >
+          <FloatRingDot className="h-11 w-11" />
+        </motion.div>
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 6.5, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+          className="absolute top-[70%] left-[6%] hidden md:block text-accent-400/70"
+        >
+          <FloatSparkle className="h-8 w-8" />
+        </motion.div>
+      </div>
+
+      <div className={container}>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -77,42 +89,39 @@ export default function Projects() {
           className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-16 lg:mb-20"
         >
           <div className="max-w-2xl">
-            <span className="inline-block text-xs font-semibold tracking-widest uppercase text-accent-600 mb-4">
-              Best Design
+            <span className={sectionLabel}>
+              {t('projects.label')}
             </span>
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-dark leading-[1.12]">
-              Selected projects we&apos;re proud of.
+              {t('projects.title')}
             </h2>
           </div>
-          <a
-            href="#contact"
-            onClick={(e) => {
-              e.preventDefault()
-              document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
-            }}
+          <Link
+            to="/contact"
             className="group inline-flex items-center gap-2 text-sm font-medium text-muted hover:text-accent-600 transition-colors shrink-0"
           >
-            View All Projects
-            <ArrowUpRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-          </a>
+            {t('projects.getInTouch')}
+          </Link>
         </motion.div>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 auto-rows-auto">
-          {projects.map((project, i) => (
+          {t('projects.items', { returnObjects: true }).map((project, i) => {
+            const meta = projectMeta[i]
+            return (
             <motion.article
-              key={project.id}
+              key={i}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.6, delay: 0.08 * i }}
-              className={`group relative rounded-2xl overflow-hidden cursor-pointer ${project.span}`}
+              className={`group relative rounded-2xl overflow-hidden cursor-pointer ${meta.span}`}
             >
-              <div className={`relative ${project.aspect} overflow-hidden`}>
+              <div className={`relative ${meta.aspect} overflow-hidden`}>
                 <ImageWithFallback
-                  src={project.image}
+                  src={meta.image}
                   alt={project.imageAlt}
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  fallbackClassName={`h-full w-full bg-gradient-to-br ${project.fallbackBg} flex items-center justify-center`}
+                  className={cardImg}
+                  fallbackClassName={`h-full w-full bg-gradient-to-br ${meta.fallbackBg} flex items-center justify-center`}
                   fallbackContent={
                     <div className="opacity-20">
                       <div className="space-y-4">
@@ -127,10 +136,6 @@ export default function Projects() {
 
                 <div className="absolute inset-0 bg-dark/0 dark:bg-black/0 transition-colors duration-500 group-hover:bg-dark/50 dark:group-hover:bg-black/50" />
 
-                <div className="absolute top-6 right-6 flex h-10 w-10 items-center justify-center rounded-full bg-white/0 dark:bg-white/0 text-white/0 transition-all duration-300 group-hover:bg-white dark:group-hover:bg-white group-hover:text-dark dark:group-hover:text-ink">
-                  <ArrowUpRight className="h-5 w-5" />
-                </div>
-
                 <div className="absolute bottom-0 left-0 right-0 p-6 sm:p-8 translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
                   <span className="text-xs font-medium text-white/70 tracking-wide uppercase">
                     {project.category}
@@ -144,7 +149,8 @@ export default function Projects() {
                 </div>
               </div>
             </motion.article>
-          ))}
+            )
+          })}
         </div>
       </div>
     </section>

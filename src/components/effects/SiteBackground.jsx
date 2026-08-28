@@ -1,18 +1,18 @@
-import { useTheme } from '../context/ThemeContext'
+import { useSelector } from 'react-redux'
 import { motion } from 'framer-motion'
 
 const lightBlobs = [
-  { cx: '15%', cy: '20%', r: 400, color: '#c7d2fe', dur: 30 },
-  { cx: '80%', cy: '60%', r: 350, color: '#ddd6fe', dur: 35 },
-  { cx: '50%', cy: '85%', r: 300, color: '#e0e7ff', dur: 28 },
-  { cx: '65%', cy: '15%', r: 280, color: '#ede9fe', dur: 32 },
+  { cx: '15%', cy: '20%', r: 400, color: '#bbf7d0', dur: 30 },
+  { cx: '80%', cy: '60%', r: 350, color: '#d1fae5', dur: 35 },
+  { cx: '50%', cy: '85%', r: 300, color: '#dcfce7', dur: 28 },
+  { cx: '65%', cy: '15%', r: 280, color: '#d1fae5', dur: 32 },
 ]
 
 const darkBlobs = [
-  { cx: '15%', cy: '20%', r: 400, color: '#4f46e5', dur: 30 },
-  { cx: '80%', cy: '60%', r: 350, color: '#6366f1', dur: 35 },
-  { cx: '50%', cy: '85%', r: 300, color: '#4338ca', dur: 28 },
-  { cx: '65%', cy: '15%', r: 280, color: '#3730a3', dur: 32 },
+  { cx: '15%', cy: '20%', r: 400, color: '#16a34a', dur: 30 },
+  { cx: '80%', cy: '60%', r: 350, color: '#22c55e', dur: 35 },
+  { cx: '50%', cy: '85%', r: 300, color: '#15803d', dur: 28 },
+  { cx: '65%', cy: '15%', r: 280, color: '#166534', dur: 32 },
 ]
 
 const particles = [
@@ -57,14 +57,14 @@ const rings = [
 ]
 
 export default function SiteBackground() {
-  const { theme } = useTheme()
+  const theme = useSelector((state) => state.theme.theme)
   const isDark = theme === 'dark'
   const blobs = isDark ? darkBlobs : lightBlobs
-  const dotColor = isDark ? '#818cf8' : '#6366f1'
-  const particleColor = isDark ? 'rgba(129,140,248,0.3)' : 'rgba(99,102,241,0.3)'
-  const shapeColor = isDark ? 'rgba(129,140,248,0.08)' : 'rgba(99,102,241,0.08)'
-  const shapeBorder = isDark ? 'rgba(129,140,248,0.12)' : 'rgba(99,102,241,0.12)'
-  const ringColor = isDark ? 'rgba(129,140,248,0.15)' : 'rgba(99,102,241,0.15)'
+  const dotColor = isDark ? '#4ade80' : '#22c55e'
+  const particleColor = isDark ? 'rgba(74,222,128,0.3)' : 'rgba(34,197,94,0.3)'
+  const shapeColor = isDark ? 'rgba(74,222,128,0.08)' : 'rgba(34,197,94,0.08)'
+  const shapeBorder = isDark ? 'rgba(74,222,128,0.12)' : 'rgba(34,197,94,0.12)'
+  const ringColor = isDark ? 'rgba(74,222,128,0.15)' : 'rgba(34,197,94,0.15)'
 
   return (
     <div className="fixed inset-0 pointer-events-none overflow-hidden transition-colors duration-300" style={{ zIndex: 0, backgroundColor: isDark ? '#0c0a09' : '#fafaf9' }}>
