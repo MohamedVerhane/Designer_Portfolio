@@ -12,6 +12,23 @@ dist
 dist-ssr
 *.local
 
+# Vite cache / build
+.vite
+
+# Environment files (keep the example template)
+.env
+.env.*
+!.env.example
+
+# Coverage and test output
+coverage
+*.lcov
+
+# Docker
+.docker/
+docker-compose.override.yml
+docker-compose.prod.yml
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
